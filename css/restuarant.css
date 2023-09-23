@@ -1,0 +1,4 @@
+.hi{font-size: 50px;font-style: oblique;color: yellow;}
+.world{font-size: 60px;color: white;}
+.div_1{background-image: url(../image/akg.jpg);height: 700px;background-repeat: no-repeat;background-size: cover;}
+.hi,.world{text-align: center;}
