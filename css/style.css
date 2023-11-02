@@ -1,0 +1,12 @@
+img{width: 100%;}
+.font{font-size: 100%;}
+.bord{width: 150px;height: 150px;border-radius: 50%;}
+.book{background-color: red;color: white;
+    padding: 10px 30px;
+    text-align: center;
+    }
+    .top{padding-top: 70px;}
+    @media (min-width:100px) and (max-width:767.98px){
+        .div_1{text-align: center;}
+    }
+    
