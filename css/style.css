@@ -1,0 +1,43 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.logo{
+    grid-area: logo;
+   
+}
+.video{
+    grid-area: video;
+}
+.image {
+    grid-area: image;
+}
+.container{
+    display: grid;
+    grid-template-areas: 'logo logo logo logo'
+    'video video video video'
+    'image image image image';
+}
+.item{
+    border: 2px solid black;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 786px) {
+    .container{
+        grid-template-areas: 'logo .'
+        'vedio vedio '
+        'image .'
+        'image image' ;
+    }
+
+}
+@media only screen and (max-width: 460px) {
+    .container{
+        grid-template-areas: 'logo . '
+        'vedio '
+        'image '
+        'image' ;
+    }
+}
