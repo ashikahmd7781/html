@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <!-- Responsive navigation menu -->
+    <div class="nav">
+        <a href="#home" class="active">NAVBAR</a>
+        
+        <div id="menu" >
+            <P id="p1"></P>
+            <p id="p2"></p>
+            <p id="p3"></p>
+        </div>
+       
+        <a  href="javascript:void(0);" class="icon">
+            <span  class="material-symbols-outlined">
+                menu
+                </span>
+        </a>
+      </div>
+
+
+
+    
+    <!-- change text on button click -->
+    <div>
+        <button id="btn">click me</button>
+        <p id="para"></p>
+    </div>
+
+    <!-- creating a to-do list -->
+    <input id="add" oninput="getvalue()" type="text">
+    <button onclick="addli()" >add item</button>
+    <ul id="list">
+        <li>Gokul</li>
+        <li>Aswin</li>
+        <li>Ashik</li>
+    </ul>
+
+
+
+    <!-- Image Slideshow -->
+    <div class="slide"
+        style="position: relative; display: flex; align-items: center; justify-content: center;top:550px;">
+
+
+        <img style="position: absolute; z-index: 3;" id="img1" class="img1" width="40%" src="img/img1.webp" alt="">
+
+        <img style="position: absolute; z-index: 2;" id="img2" class="img2" width="40%" src="img/img2.jpg" alt="">
+
+        <img style="position: absolute; z-index: 1;" id="img3" class="img3" width="40%" src="img/img3.jpg" alt="">
+
+        <img style="position: absolute; z-index: 0;" id="img4" class="img4" width="40%" src="img/img4.jpg" alt="">
+
+        <div class="buttons">
+            <a href="" id="left-arrow"><img src="img/left-arrow.jpg" width="80" alt=""></a>
+            <a id="right-arrow" href=""><img src="img/right-arrow.png" width="80" alt="" style="margin-left: 800px;"></a>
+        </div>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
