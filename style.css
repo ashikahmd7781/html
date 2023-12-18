@@ -1,0 +1,22 @@
+table{
+    margin-top: 20px;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+button{
+    
+    
+    border-radius: 100px;
+
+}
