@@ -1,0 +1,85 @@
+mongo - open a connectopn to the local mongodb instance
+show dbs - show all databases 
+use db_name - create and switch to the databases
+db - print current database
+db.dropDatabase - delete the current database
+
+show collections - show all collections in database
+db.createCollection("users") - create a collection with name users
+
+
+CRUD - create read update delete
+
+//create ............................
+
+db.users.insertOne({name : "Rahul"}) // create a new document inside the 'users' collection
+db.users.insertMany({name : "Rahul"},{name : "kyle"}) // create multiple new document inside the 'users' collection
+
+{
+    name : "abs",
+    age : "21",
+}
+
+dp.user.insertOne({firstname : "jhon",lastname : "kong",email : "jhon@gmail.com,salary :"30000",DOB :new Date("mar 24,2011"),skill:["Angular","react","mongoDB"],adress: {street:"upper street",house :"no 1",city:"newyork",country :"USA"}})
+
+
+
+/read.................................
+
+db.users.find() //get all documents from user's collection
+db.users.find(<filter object>) // find that matches the filter object
+db.users.find({age:32})
+
+db.users.find(<filter object>),(<select object>) //find all the document that matches the filter object but return only the files specified in the select object
+db.users.find({age : 35}),({name : 1 ,_id : 0})
+
+db.users.findOne({name : "rahul"})//only returns the first document that matches the filter object
+
+db.users.countDocument(<filter object>) // returns document matching the filter object , if filter object empty returns all document countDocument
+db.users.countDocument({})
+
+//update................................
+
+db.users.updateOne({name : "rahul"}),({$set : {name :"rahul1"}}) //replace rahul with rahul1, consider the only the first matches
+
+db.users.updateMany   ({name : "rahul"})({$set : {name :"rahul2"}}) //replace rahul1 with rahul2, consider all the  matches
+
+db.users.find(<>)
+
+/Delete.....................................
+
+db.users.deleteOne({name : "rahul"}), //delete the first document that matches the filter object
+
+db.users.deleteMany({name : "rahul"}), //delete the all the matching document that matches the filter object
+
+/ Additional filter object........................
+
+db.users.find({age : {$gt : 12}}) //get all the users whose age is greater than 12
+db.users.find({age : {$gte : 12}}) //get all the users whose age is greater than 12
+db.users.find({age : {lt : 12}}) //get all the users whose age is less than 12
+db.users.find({age : {$lte : 12}}) //get all the users whose age is greater than 12 and equal to 12
+db.users.find({$in : ["riya","jhon"]}) //get all the users whose name of "riya" and "jhon"
+db.users.find({$nin : ["riya","jhon"]}) //get all the users that does not have the name of "riya" and "jhon"
+db.users.find({$and : [{name:"riya"},{age :"10"}]}) //get all the users with name of "riya" and age"10"
+db.users.find({$or : [{name:"riya"},{age :"10"}]}) //get all the users with name of "riya" or age"10"
+db.users.find({name :{$not :{ $eq:"riya"}}}) //get all the users with name other than "riya" 
+db.users .find({age : {exists : true}}) //get all the users having an age field
+db.users.find({$expr : {$gt ["$age","min_age"]}}) //gets all the users having their age greater than min_age
+
+
+
+/Aditional update object...........................
+
+db.users.updateOne({age :15},{$set : {name : "hi"}})//update the name of the first users with age of 15 to the value of hi
+db.users.updateOne({age :15}, {$inc : {age :5}}) // add  5 to the age of first users with age of 15 
+db.users.updateMany({},{rename : {age : "years"}}) //renames the field age to years of all the users
+db.users.updateMany({age : 15},{$unset : {age :""}}) //remove the age field from the first user with age of 15
+db.users.updateMany({$push : {socialmedia : "instagram"}}) //add "instagram" to the "socialmedia" array for all users
+db.users.updateMany({$pull : {socialmedia : "instagram"}}) //remove "instagram" to the "socialmedia" array for all users
+
+
+/read modifier .....................................
+
+db.users.find().sort({name : 1 , age: -1}) //get all the users sorted by name in alphabatic order abd if any name are the same sort bt age in reverse order
+db.users.find().limit(2) //only return the first 2 users
+db.users.find().skip(2) //skip the first 2 users when returning the result
