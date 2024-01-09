@@ -9,7 +9,7 @@ const {MongoClient}= require('mongodb');
 
 const client = new MongoClient("mongodb://127.0.0.1:27017");
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async(req, res) => {
 
   //acess the database and collections
   const db =  client.db ('ums');
@@ -24,12 +24,21 @@ const server = http.createServer((req, res) => {
   console.log("parsedUrl : ",parsedUrl);
 
 //if url path is '/'(root path) server html
-if(parsedUrl.pathname === '/'){
-  res.writeHead(200,{'content-Type' : 'text/html'});
+if(parsedUrl.pathname === '/') {
+  res.writeHead(200, {'Content-Type' : 'text/html'});
   res.end(fs.readFileSync('../client/index.html'));
-}else if(parsedUrl.pathname ==='/style.css'){
-  res.writeHead(200,{"Content-Type":'text/css'});
-  res.end(fs.readFileSync('../client/style.css'))
+}else if(parsedUrl.pathname === '/add_user.html') {
+  res.writeHead(200, {'Content-Type' : 'text/html'});
+  res.end(fs.readFileSync('../client/add_user.html'));
+}else if(parsedUrl.pathname === '/get_user.html') {
+  res.writeHead(200, {'Content-Type' : 'text/html'});
+  res.end(fs.readFileSync('../client/get_user.html'));
+}else if(parsedUrl.pathname === '/style.css'){
+  res.writeHead(200, {'Content-Type' : 'text/css'});
+  res.end(fs.readFileSync('../client/style.css'));
+}else if(parsedUrl.pathname === '/script.js'){
+  res.writeHead(200, {'Content-Type' : 'text/javascript'});
+  res.end(fs.readFileSync('../client/script.js'));
 }
 
 //handle from submission on POST Rrequest to /submit
