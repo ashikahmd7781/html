@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    
+    <form >
+
+
+        <!-- Text Input -->
+        <div id="moviename-group">
+            <label for="name">Movie Name:</label>
+            <input type="text" id="moviename" name="moviename" onkeyup="validatemoviename()" required>
+            <div id="moviename-error"></div>
+            </div>
+    
+            <div id="movietype-group">
+            <label for="type">Movie Type:</label>
+            <input type="text" id="movietype" name="movietype" onkeyup="validatelastName()" required>
+            <div id="movietype-error">
+                
+            </div>
+            </div>
+
+
+
+        <!-- Submit Button -->
+       <button type="button" onclick="submitForm()">submit</button>
+        
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
